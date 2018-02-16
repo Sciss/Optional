@@ -1,8 +1,8 @@
 name               := "Optional"
 version            := "1.0.0"
 organization       := "de.sciss"
-scalaVersion       := "2.11.8"
-crossScalaVersions := Seq("2.11.8", "2.10.6")
+scalaVersion       := "2.13.0-M3"
+crossScalaVersions := Seq("2.12.4", "2.11.12")
 description        := "An implicit option for Scala"
 homepage           := Some(url(s"https://github.com/Sciss/${name.value}"))
 licenses           := Seq("LGPL v2.1+" -> url("http://www.gnu.org/licenses/lgpl-2.1.txt"))

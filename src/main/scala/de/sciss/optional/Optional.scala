@@ -2,7 +2,7 @@
  * Optional.scala
  * (Optional)
  *
- * Copyright (c) 2016 Hanns Holger Rutz. All rights reserved.
+ * Copyright (c) 2016–2020 Hanns Holger Rutz. All rights reserved.
  *
  * This software is published under the GNU Lesser General Public License v2.1+
  *

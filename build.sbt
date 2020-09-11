@@ -1,35 +1,37 @@
-name               := "Optional"
-version            := "1.0.0"
-organization       := "de.sciss"
-scalaVersion       := "2.13.0-M5"
-crossScalaVersions := Seq("2.12.4", "2.11.12", "2.13.0-M5")
-description        := "An implicit option for Scala"
-homepage           := Some(url(s"https://github.com/Sciss/${name.value}"))
-licenses           := Seq("LGPL v2.1+" -> url("http://www.gnu.org/licenses/lgpl-2.1.txt"))
+lazy val commonSettings = Seq(
+  name               := "Optional",
+  version            := "1.0.1",
+  organization       := "de.sciss",
+  scalaVersion       := "2.13.3",
+  crossScalaVersions := Seq("0.27.0-RC1", "2.13.3", "2.12.12"),
+  description        := "An implicit option for Scala",
+  homepage           := Some(url(s"https://git.iem.at/sciss/${name.value}")),
+  licenses           := Seq("LGPL v2.1+" -> url("http://www.gnu.org/licenses/lgpl-2.1.txt")),
+  scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-Xsource:2.13", "-encoding", "utf8"),
+)
 
-initialCommands in console := """import de.sciss.optional._"""
-
-scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-Xfuture", "-encoding", "utf8")
-
-// ---- publishing ----
-
-publishMavenStyle := true
-
-publishTo :=
-  Some(if (isSnapshot.value)
-    "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
-  else
-    "Sonatype Releases"  at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+lazy val root = project.in(file("."))
+  .settings(commonSettings)
+  .settings(publishSettings)
+  .settings(
+    initialCommands in console := """import de.sciss.optional._""",
   )
 
-publishArtifact in Test := false
-
-pomIncludeRepository := { _ => false }
-
-pomExtra := { val n = name.value
+lazy val publishSettings = Seq(
+  publishMavenStyle := true,
+  publishTo := {
+    Some(if (isSnapshot.value)
+      "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+    else
+      "Sonatype Releases"  at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+    )
+  },
+  publishArtifact in Test := false,
+  pomIncludeRepository := { _ => false },
+  pomExtra := { val n = name.value
 <scm>
-  <url>git@github.com:Sciss/{n}.git</url>
-  <connection>scm:git:git@github.com:Sciss/{n}.git</connection>
+  <url>git@git.iem.at:sciss/{n}.git</url>
+  <connection>scm:git:git@git.iem.at:sciss/{n}.git</connection>
 </scm>
 <developers>
   <developer>
@@ -38,4 +40,5 @@ pomExtra := { val n = name.value
     <url>http://www.sciss.de</url>
   </developer>
 </developers>
-}
+  }
+)

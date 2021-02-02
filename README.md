@@ -1,6 +1,6 @@
 # Optional
 
-[![Build Status](https://travis-ci.org/Sciss/Optional.svg?branch=main)](https://travis-ci.org/Sciss/Optional)
+[![Build Status](https://github.com/Sciss/Optional/workflows/Scala%20CI/badge.svg?branch=main)](https://github.com/Sciss/Optional/actions?query=workflow%3A%22Scala+CI%22)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.sciss/optional_2.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.sciss/optional_2.13)
 
 ## statement
@@ -22,7 +22,7 @@ You can now write
 
 This is useful for some DSLs where you want to minimise noise for the user.
 
-Optional is (C)opyright 2016–2020 by Hanns Holger Rutz. All rights reserved. FileUtil is released under 
+Optional is (C)opyright 2016–2021 by Hanns Holger Rutz. All rights reserved. FileUtil is released under 
 the [GNU Lesser General Public License](https://raw.github.com/Sciss/Optional/main/LICENSE) v2.1+ and comes with 
 absolutely no warranties. To contact the author, send an e-mail to `contact at sciss.de`.
 

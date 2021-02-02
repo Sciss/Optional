@@ -1,7 +1,7 @@
 lazy val projectVersion = "1.0.1"
 
 lazy val commonJvmSettings = Seq(
-  crossScalaVersions := Seq("3.0.0-M2", "2.13.3", "2.12.12"),
+  crossScalaVersions := Seq("3.0.0-M3", "2.13.3", "2.12.12"),
 )
 
 // sonatype plugin requires that these are in global
